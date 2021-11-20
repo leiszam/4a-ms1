@@ -2,6 +2,7 @@
 from django.db import transaction
 from rest_framework import serializers
 from rest_auth.registration.serializers import RegisterSerializer
+from .models import CustomUser
 
 from .models import GENDER_SELECTION
 
@@ -25,3 +26,10 @@ class CustomRegisterSerializer(RegisterSerializer):
         user.last_name = self.data.get('last_name')
         user.save()
         return user
+
+
+class UsuarioSerielizer(serializers.ModelSerializer):
+
+    class Meta:
+        model =CustomUser
+        fields = '__all__'

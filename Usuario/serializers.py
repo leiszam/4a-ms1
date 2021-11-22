@@ -1,8 +1,15 @@
 # serializers.py in the users Django app
+from collections import UserList
+from typing import Container
 from django.db import transaction
 from rest_framework import serializers
 from rest_auth.registration.serializers import RegisterSerializer
 from .models import CustomUser
+
+from django.contrib.auth import get_user_model
+
+
+
 
 from .models import GENDER_SELECTION
 
@@ -33,3 +40,15 @@ class UsuarioSerielizer(serializers.ModelSerializer):
     class Meta:
         model =CustomUser
         fields = '__all__'
+
+class UserGetSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        
+        model = CustomUser
+        fields = ['id','username','first_name','last_name','last_login']
+
+        
+
+
+

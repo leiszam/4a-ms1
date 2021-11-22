@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'rest_auth',
     'django.contrib.sites',
     'allauth',
+    'django_filters',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.openid',
